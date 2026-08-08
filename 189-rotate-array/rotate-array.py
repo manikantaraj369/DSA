@@ -4,9 +4,11 @@ class Solution(object):
         k %= n
         if n == 0:
             return
-        temp = nums[-k:]
-        for i in range(n-k-1,-1,-1):
-            nums[i+k] = nums[i]
-        for i in range(k):
-            nums[i] = temp[i]
-        return nums
+        self.reverse(nums,0,n-1)
+        self.reverse(nums,0,k-1)
+        self.reverse(nums,k,n-1)
+    def reverse(self,nums,first,last):
+        while first <= last:
+            nums[first] , nums[last] = nums[last] , nums[first]
+            first += 1
+            last -= 1
