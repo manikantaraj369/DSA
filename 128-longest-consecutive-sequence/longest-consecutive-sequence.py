@@ -8,11 +8,11 @@ class Solution(object):
         for i in nums:
             st.add(i)
         for j in st:
-            if j + 1 not in st:
+            if j - 1 not in st:
                 count = 1
                 x = j
-                while x - 1 in st:
+                while x + 1 in st:
                     count += 1
-                    x -= 1
+                    x += 1
                 max_count = max(max_count,count) 
         return max_count
