@@ -3,10 +3,8 @@ class Solution(object):
         n = len(nums)
         if n == 0:
             return 0
-        st = set()
+        st = set(nums)
         max_count = 1
-        for i in nums:
-            st.add(i)
         for j in st:
             if j - 1 not in st:
                 count = 1
