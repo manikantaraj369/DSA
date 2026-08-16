@@ -2,9 +2,8 @@ class Solution(object):
     def spiralOrder(self, matrix):
         n = len(matrix)
         m = len(matrix[0])
-        left = 0
+        left,top = 0 , 0
         right = m - 1
-        top = 0
         bottom = n -1
         res = []
         while left <= right and top <= bottom:
