@@ -4,14 +4,13 @@ class Solution(object):
         high = max(piles)
         while low <= high:
             mid = (low + high)//2
-            if self.counting(piles,mid) <= h:
+            totalhours = 0
+            for i in piles:
+                totalhours += (i // mid + (1 if i % mid != 0 else 0))
+            if totalhours <= h:
                 ans = mid
                 high = mid - 1
             else:
                 low = mid + 1
         return ans
-    def counting(self,piles,hourly):
-        totalhours = 0
-        for i in piles:
-            totalhours += (i // hourly + (1 if i % hourly != 0 else 0))
-        return totalhours
+        
