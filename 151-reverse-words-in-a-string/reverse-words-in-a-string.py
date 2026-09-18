@@ -20,3 +20,4 @@ class Solution(object):
         #     high -= 1
         # return " ".join(res)
         return " ".join(s.split()[::-1])
+        
