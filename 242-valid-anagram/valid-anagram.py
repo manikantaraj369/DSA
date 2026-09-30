@@ -3,8 +3,10 @@ class Solution(object):
         if len(s) != len(t):
             return False
         hash1 = {} 
-        hash2 = {}
         for i in range(len(s)):
             hash1[s[i]] = hash1.get(s[i],0) + 1
-            hash2[t[i]] = hash2.get(t[i],0) + 1 
-        return hash1 == hash2
+        for i in range(len(t)):
+            if t[i] not in hash1 or hash1[t[i]] == 0:
+                return False
+            hash1[t[i]] -= 1
+        return True
