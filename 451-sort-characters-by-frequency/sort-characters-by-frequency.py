@@ -1,4 +1,3 @@
-from collections import Counter
 class Solution(object):
     def frequencySort(self, s):
     #     freq = Counter(s)
